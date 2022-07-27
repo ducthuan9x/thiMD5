@@ -11,7 +11,7 @@ import {Tuor} from "../../model/tuor";
 })
 export class EditTuorComponent implements OnInit {
   // @ts-ignore
-  tour:Tuor;
+  tuor:Tuor;
   id:any;
   constructor(private tuorService: TuorService,
               private activatedRoute: ActivatedRoute,
@@ -44,7 +44,7 @@ export class EditTuorComponent implements OnInit {
       })
     })
     // @ts-ignore
-    this.tour = {
+    this.tuor = {
       title: '',
       price: '',
       description: ''
@@ -61,7 +61,7 @@ export class EditTuorComponent implements OnInit {
     }
     console.log(tuor);
     // @ts-ignore
-    this.tuorService.editTour(this.tour.id,tuor).subscribe(()=>{
+    this.tuorService.editTour(this.tuor.id,tuor).subscribe(()=>{
       alert("Ok");
       this.router.navigate(['/'])
     },error => {
